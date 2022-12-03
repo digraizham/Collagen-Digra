@@ -23,7 +23,7 @@ class _SignupComponent extends State<SignupComponent> {
             child: Column(
               children: [
                 SizedBox(
-                  height: SizeConfig.screenHeight = 0.05,
+                  height: SizeConfig.screenHeight = 0,
                 ),
                 Image.asset(
                     "assets/images/signin_logo.png",

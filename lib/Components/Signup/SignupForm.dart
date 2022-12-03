@@ -1,4 +1,4 @@
-import 'package:project_collagen/Screens/Register/Registrasi.dart';
+import 'package:project_collagen/Screens/Register/SignupScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -39,7 +39,7 @@ class _SignupForm extends State<SignupForm> {
             ),
           ),
           buildUserName(),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
 
           DefaultTextStyle.merge(
             style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
@@ -50,7 +50,29 @@ class _SignupForm extends State<SignupForm> {
             ),
           ),
           buildTelephoneNumber(),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
+
+          DefaultTextStyle.merge(
+            style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            child: Row(
+              children: const [
+                Text("E-Mail Mahasiswa"),
+              ],
+            ),
+          ),
+          buildEmailMahasiswa(),
+          SizedBox(height: 10),
+
+          DefaultTextStyle.merge(
+            style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            child: Row(
+              children: const [
+                Text("Kata Sandi"),
+              ],
+            ),
+          ),
+          buildPassword(),
+          SizedBox(height: 10),
 
           Container(
             width: 400,
@@ -87,7 +109,11 @@ class _SignupForm extends State<SignupForm> {
       keyboardType: TextInputType.text,
       style: mTitleStyle,
       decoration: InputDecoration(
-        labelText: 'Masukkan Nama Pengguna',
+        hintText: 'Masukkan Nama Pengguna',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32)
+        ),
         labelStyle:
             TextStyle(
                 color: focusNode.hasFocus ? mTitleColor : kPrimaryColor
@@ -100,10 +126,14 @@ class _SignupForm extends State<SignupForm> {
   TextFormField buildTelephoneNumber() {
     return TextFormField(
       controller: txtTelephoneNumber,
-      obscureText: true,
+      keyboardType: TextInputType.text,
       style: mTitleStyle,
       decoration: InputDecoration(
-        labelText: 'Masukkan Nomor Telepon',
+        hintText: 'Masukkan Nomor Telepon',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32)
+        ),
         labelStyle: TextStyle(
             color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor
         ),
@@ -115,10 +145,14 @@ class _SignupForm extends State<SignupForm> {
   TextFormField buildEmailMahasiswa() {
     return TextFormField(
       controller: txtEmailMahasiswa,
-      obscureText: true,
+      keyboardType: TextInputType.text,
       style: mTitleStyle,
       decoration: InputDecoration(
-        labelText: 'Masukkan Email Mahasiswa',
+        hintText: 'Masukkan Email Mahasiswa',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32)
+        ),
         labelStyle: TextStyle(
             color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor
         ),
@@ -134,6 +168,10 @@ class _SignupForm extends State<SignupForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Kata Sandi',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32)
+        ),
         labelStyle: TextStyle(
             color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor
         ),

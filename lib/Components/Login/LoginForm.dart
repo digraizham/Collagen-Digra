@@ -1,4 +1,4 @@
-import 'package:project_collagen/Screens/Register/Registrasi.dart';
+import 'package:project_collagen/Screens/Register/SignupScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +25,7 @@ class _SignInForm extends State<SignInForm> {
       child: Column(
         children: [
           DefaultTextStyle.merge(
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
@@ -36,7 +36,7 @@ class _SignInForm extends State<SignInForm> {
           buildUserName(),
           const SizedBox(height: 20),
           DefaultTextStyle.merge(
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
@@ -96,7 +96,7 @@ class _SignInForm extends State<SignInForm> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pop(context, RegisterScreen.routeName);
+                  Navigator.pushNamed(context, SignupScreen.routeName);
                 },
                 child: const Text(
                   "Belum memiliki akun? Daftar",
@@ -118,8 +118,13 @@ class _SignInForm extends State<SignInForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Nama Pengguna',
-        labelStyle:
-            TextStyle(color: focusNode.hasFocus ? mTitleColor : kPrimaryColor),
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(32)
+        ),
+        labelStyle: TextStyle(
+            color: focusNode.hasFocus ? mTitleColor : kPrimaryColor
+        ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -132,8 +137,13 @@ class _SignInForm extends State<SignInForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Kata Sandi',
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32)
+        ),
         labelStyle: TextStyle(
-            color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
+            color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor
+        ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
