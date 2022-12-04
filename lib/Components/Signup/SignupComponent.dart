@@ -26,7 +26,7 @@ class _SignupComponent extends State<SignupComponent> {
                   height: SizeConfig.screenHeight = 0,
                 ),
                 Image.asset(
-                    "assets/images/signin_logo.png",
+                    "assets/images/Logo_Signup.png",
                     height: 200,
                     width: 252,
                 ),

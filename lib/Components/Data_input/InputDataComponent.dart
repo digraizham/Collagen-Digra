@@ -54,6 +54,7 @@ class _InputDataComponent extends State<InputDataComponent> {
                       child: Text(
                         "Lengkapi biodata di bawah untuk menyelesaikan proses registrasi.",
                         style: TextStyle(
+                          color: CupertinoColors.black,
                           fontSize: 15
                         ),
                         softWrap: true,

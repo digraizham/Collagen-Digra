@@ -72,6 +72,12 @@ class _InputDataForm extends State<InputDataForm> {
           const SizedBox(
             height: 30,
           ),
+          Image.asset(
+            "assets/images/vector_inputdata.png",
+            alignment: Alignment.bottomLeft,
+            cacheHeight: 190,
+            cacheWidth: 350,
+          ),
         ],
       ),
     );
@@ -114,12 +120,12 @@ class _InputDataForm extends State<InputDataForm> {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 2),
-            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(width: 0.8, color: Colors.black),
+            borderRadius: BorderRadius.circular(32),
           ),
           border: OutlineInputBorder(
-            borderSide: BorderSide(width: 2),
-            borderRadius: BorderRadius.circular(20),
+            borderSide: BorderSide(width: 1, color: Colors.black),
+            borderRadius: BorderRadius.circular(32),
           ),
           filled: true,
           fillColor: Colors.white,
