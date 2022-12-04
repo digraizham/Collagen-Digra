@@ -25,7 +25,7 @@ class _InputDataComponent extends State<InputDataComponent> {
                   style: const TextStyle(
                     color: CupertinoColors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25
+                    fontSize: 20
                   ),
                   child: Row(
                     children: const [
@@ -37,7 +37,7 @@ class _InputDataComponent extends State<InputDataComponent> {
                   style: const TextStyle(
                     color: CupertinoColors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25
+                    fontSize: 20
                   ),
                   child: Row(
                     children: const [
@@ -55,7 +55,7 @@ class _InputDataComponent extends State<InputDataComponent> {
                         "Lengkapi biodata di bawah untuk menyelesaikan proses registrasi.",
                         style: TextStyle(
                           color: CupertinoColors.black,
-                          fontSize: 15
+                          fontSize: 13
                         ),
                         softWrap: true,
                         maxLines: 2,

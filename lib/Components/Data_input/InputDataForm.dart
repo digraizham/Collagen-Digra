@@ -1,6 +1,8 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
 import 'package:project_collagen/utils/constants.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,8 +23,9 @@ List<DropdownMenuItem<String>> get dropdownItems {
   return menuItems;
 }
 
-class _InputDataForm extends State<InputDataForm> {
 
+
+class _InputDataForm extends State<InputDataForm> {
   String? FirstName;
   String? LastName;
   DateTime? BornDate;
@@ -35,7 +38,7 @@ class _InputDataForm extends State<InputDataForm> {
 
   FocusNode focusNode = FocusNode();
   String selectedValue = "Jenis Kelamin";
-  
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -44,6 +47,8 @@ class _InputDataForm extends State<InputDataForm> {
           buildFirstName(),
           const SizedBox(height: 20),
           buildLastName(),
+          const SizedBox(height: 20),
+          buildBornDate(),
           const SizedBox(height: 20),
           buildGender(),
           const SizedBox(height: 20),
@@ -54,7 +59,7 @@ class _InputDataForm extends State<InputDataForm> {
             height: 45,
             child: TextButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xff3167FF),
+                backgroundColor: const Color(0xff3167FF),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -90,7 +95,7 @@ class _InputDataForm extends State<InputDataForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Nama Depan',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
         labelStyle:
             TextStyle(color: focusNode.hasFocus ? mTitleColor : kPrimaryColor),
@@ -106,7 +111,7 @@ class _InputDataForm extends State<InputDataForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Nama Belakang',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
         labelStyle:
             TextStyle(color: focusNode.hasFocus ? mTitleColor : kPrimaryColor),
@@ -115,30 +120,52 @@ class _InputDataForm extends State<InputDataForm> {
     );
   }
 
-  DropdownButtonFormField buildGender(){
+  TextFormField buildBornDate() {
+    return TextFormField(
+      controller: txtBornDate,
+      decoration: const InputDecoration(
+        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        hintText: "Tanggal Lahir",
+      ),
+      onTap: () async{
+        DateTime? date = DateTime.now();
+        FocusScope.of(context).requestFocus(FocusNode());
+        date = await showRoundedDatePicker(
+          context: context, 
+          initialDate: DateTime.now(),
+          firstDate: DateTime(1900),
+          lastDate: DateTime(2100),
+        );
+        if(date == Null) return;
+        txtBornDate.text = date.toString();
+      },
+    );
+  }
+
+  DropdownButtonFormField buildGender() {
     return DropdownButtonFormField(
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 0.8, color: Colors.black),
-            borderRadius: BorderRadius.circular(32),
-          ),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(width: 1, color: Colors.black),
-            borderRadius: BorderRadius.circular(32),
-          ),
-          filled: true,
-          fillColor: Colors.white,
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(width: 0.8, color: Colors.black),
+          borderRadius: BorderRadius.circular(32),
         ),
-        iconSize: 30,
-        dropdownColor: Colors.white,
-        value: selectedValue,
-        items: dropdownItems, 
-        onChanged: (newValue) { 
-          setState(() {
-            selectedValue = newValue!;
-          });
-        },
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(width: 1, color: Colors.black),
+          borderRadius: BorderRadius.circular(32),
+        ),
+        filled: true,
+        fillColor: Colors.white,
+      ),
+      iconSize: 30,
+      dropdownColor: Colors.white,
+      value: selectedValue,
+      items: dropdownItems,
+      onChanged: (newValue) {
+        setState(() {
+          selectedValue = newValue!;
+        });
+      },
     );
   }
 
@@ -149,7 +176,7 @@ class _InputDataForm extends State<InputDataForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Universitas Asal',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
         labelStyle:
             TextStyle(color: focusNode.hasFocus ? mTitleColor : kPrimaryColor),
