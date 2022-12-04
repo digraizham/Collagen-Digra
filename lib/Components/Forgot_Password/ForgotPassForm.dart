@@ -33,7 +33,7 @@ class _ForgotPassForm extends State<ForgotPassForm> {
               ],
             ),
           ),
-          buildUserName(),
+          buildEmail(),
           const SizedBox(height: 20),
           Container(
             width: 400,
@@ -83,7 +83,7 @@ class _ForgotPassForm extends State<ForgotPassForm> {
     );
   }
 
-  TextFormField buildUserName() {
+  TextFormField buildEmail() {
     return TextFormField(
       controller: txtEmail,
       keyboardType: TextInputType.text,

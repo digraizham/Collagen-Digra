@@ -32,7 +32,7 @@ class _RecoverForm extends State<RecoverForm> {
               ],
             ),
           ),
-          buildUserName(),
+          buildKode(),
           const SizedBox(height: 20),
           Container(
             width: 400,
@@ -80,7 +80,7 @@ class _RecoverForm extends State<RecoverForm> {
     );
   }
 
-  TextFormField buildUserName() {
+  TextFormField buildKode() {
     return TextFormField(
       controller: txtKode,
       keyboardType: TextInputType.text,
