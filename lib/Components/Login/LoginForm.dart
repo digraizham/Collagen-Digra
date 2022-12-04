@@ -18,7 +18,7 @@ class _SignInForm extends State<SignInForm> {
   TextEditingController txtUserName = TextEditingController(),
       txtPassword = TextEditingController();
 
-  FocusNode focusNode = new FocusNode();
+  FocusNode focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,7 @@ class _SignInForm extends State<SignInForm> {
             ),
           ),
           buildUserName(),
+
           const SizedBox(height: 20),
           DefaultTextStyle.merge(
             style: const TextStyle(
@@ -46,6 +47,7 @@ class _SignInForm extends State<SignInForm> {
             ),
           ),
           buildPassword(),
+          
           const SizedBox(height: 20),
           Container(
             width: 400,
@@ -67,9 +69,10 @@ class _SignInForm extends State<SignInForm> {
               ),
             ),
           ),
+          const SizedBox(height: 13),
           Row(
             children: [
-              Spacer(),
+              const Spacer(),
               GestureDetector(
                 onTap: () {
                   Navigator.pushNamed(context, ForgotPassScreen.routeName);
@@ -103,12 +106,11 @@ class _SignInForm extends State<SignInForm> {
                 },
                 child: const Text(
                   "Belum memiliki akun? Daftar",
-                  style:
-                      TextStyle(
-                          height: 15,
-                          color: Colors.white,
-                          fontSize: 14,
-                      ),
+                  style: TextStyle(
+                    height: 15,
+                    color: Colors.white,
+                    fontSize: 14,
+                  ),
                 ),
               ),
             ],
@@ -125,13 +127,10 @@ class _SignInForm extends State<SignInForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Nama Pengguna',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(32)
-        ),
-        labelStyle: TextStyle(
-            color: focusNode.hasFocus ? mTitleColor : kPrimaryColor
-        ),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
+        labelStyle:
+            TextStyle(color: focusNode.hasFocus ? mTitleColor : kPrimaryColor),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
@@ -144,13 +143,10 @@ class _SignInForm extends State<SignInForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Kata Sandi',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(32)
-        ),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
         labelStyle: TextStyle(
-            color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor
-        ),
+            color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );

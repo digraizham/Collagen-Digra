@@ -1,21 +1,21 @@
 // ignore_for_file: file_names
 
-import 'package:project_collagen/Screens/New_Pass/NewPassScreen.dart';
+import 'package:project_collagen/Screens/Login/LoginScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class RecoverForm extends StatefulWidget {
-  const RecoverForm({super.key});
+class NewPassForm extends StatefulWidget {
+  const NewPassForm({super.key});
 
   @override
-  _RecoverForm createState() => _RecoverForm();
+  _NewPassForm createState() => _NewPassForm();
 }
 
-class _RecoverForm extends State<RecoverForm> {
-  String? kode;
+class _NewPassForm extends State<NewPassForm> {
+  String? pass;
 
-  TextEditingController txtKode = TextEditingController();
+  TextEditingController txtPassword = TextEditingController();
 
   FocusNode focusNode = FocusNode();
 
@@ -29,12 +29,13 @@ class _RecoverForm extends State<RecoverForm> {
                 color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
-                Text("Kode Pemulihan"),
+                Text("Kata Sandi Baru"),
               ],
             ),
           ),
           buildKode(),
           const SizedBox(height: 20),
+
           Container(
             width: 400,
             height: 45,
@@ -46,10 +47,10 @@ class _RecoverForm extends State<RecoverForm> {
                 ),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, NewPassScreen.routeName);
+                Navigator.pushNamed(context, LoginScreen.routeName);
               },
               child: const Text(
-                "Kirim",
+                "Simpan",
                 style: TextStyle(
                   color: Color(0xffffffff),
                   fontSize: 20,
@@ -57,13 +58,11 @@ class _RecoverForm extends State<RecoverForm> {
               ),
             ),
           ),
-          
           const SizedBox(
             height: 240,
           ),
           Stack(
             children: [
-
               Image.asset(
                 "assets/images/vektor_signin.png",
                 alignment: Alignment.bottomLeft,
@@ -71,10 +70,10 @@ class _RecoverForm extends State<RecoverForm> {
                 cacheWidth: 350,
               ),
               Image.asset(
-                  "assets/images/vector_inputdata.png",
-                  alignment: Alignment.bottomLeft,
-                  cacheHeight: 190,
-                  cacheWidth: 350,
+                "assets/images/vector_inputdata.png",
+                alignment: Alignment.bottomLeft,
+                cacheHeight: 190,
+                cacheWidth: 350,
               )
             ],
           )
@@ -85,15 +84,15 @@ class _RecoverForm extends State<RecoverForm> {
 
   TextFormField buildKode() {
     return TextFormField(
-      controller: txtKode,
-      keyboardType: TextInputType.text,
+      controller: txtPassword,
+      obscureText: true,
       style: mTitleStyle,
       decoration: InputDecoration(
-        hintText: 'Masukkan kode',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        hintText: 'Masukkan Kata Sandi',
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
-        labelStyle:
-            TextStyle(color: focusNode.hasFocus ? mTitleColor : kPrimaryColor),
+        labelStyle: TextStyle(
+            color: focusNode.hasFocus ? mSubtitleColor : kPrimaryColor),
         floatingLabelBehavior: FloatingLabelBehavior.always,
       ),
     );
