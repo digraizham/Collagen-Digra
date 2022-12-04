@@ -1,3 +1,4 @@
+import 'package:project_collagen/Screens/Forgot_Password/ForgotPassScreen.dart';
 import 'package:project_collagen/Screens/Register/SignupScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -70,7 +71,9 @@ class _SignInForm extends State<SignInForm> {
             children: [
               Spacer(),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, ForgotPassScreen.routeName);
+                },
                 child: Text(
                   "Lupa Kata Sandi?",
                   style: GoogleFonts.montserrat(
@@ -101,7 +104,11 @@ class _SignInForm extends State<SignInForm> {
                 child: const Text(
                   "Belum memiliki akun? Daftar",
                   style:
-                      TextStyle(height: 15, color: Colors.white, fontSize: 14),
+                      TextStyle(
+                          height: 15,
+                          color: Colors.white,
+                          fontSize: 14,
+                      ),
                 ),
               ),
             ],

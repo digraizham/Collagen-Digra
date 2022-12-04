@@ -80,7 +80,7 @@ class _InputDataForm extends State<InputDataForm> {
           Image.asset(
             "assets/images/vector_inputdata.png",
             alignment: Alignment.bottomLeft,
-            cacheHeight: 190,
+            cacheHeight: 150,
             cacheWidth: 350,
           ),
         ],
