@@ -17,7 +17,7 @@ class SignupScreen extends StatelessWidget {
         title: const Text(' '),
         // ignore: prefer_const_constructors
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios, color: Colors.grey,), 
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.black,), 
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),

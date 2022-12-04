@@ -1,7 +1,6 @@
 import 'package:project_collagen/Screens/Login/LoginScreen.dart';
 import 'package:project_collagen/routes.dart';
 import 'package:project_collagen/theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() async {

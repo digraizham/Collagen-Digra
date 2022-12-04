@@ -1,4 +1,4 @@
-import 'package:project_collagen/Screens/Register/SignupScreen.dart';
+import 'package:project_collagen/Screens/Personal Data Input/InputDataScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,6 +15,7 @@ class _SignupForm extends State<SignupForm> {
   String? telephone_number;
   String? email_mahasiswa;
   String? password;
+  bool? setuju = false;
 
   TextEditingController txtUserName = TextEditingController();
   TextEditingController txtTelephoneNumber = TextEditingController();
@@ -31,7 +32,7 @@ class _SignupForm extends State<SignupForm> {
         children: [
 
           DefaultTextStyle.merge(
-            style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
                 Text("Nama Pengguna"),
@@ -39,10 +40,10 @@ class _SignupForm extends State<SignupForm> {
             ),
           ),
           buildUserName(),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
 
           DefaultTextStyle.merge(
-            style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
                 Text("Nomor Telepon"),
@@ -50,10 +51,10 @@ class _SignupForm extends State<SignupForm> {
             ),
           ),
           buildTelephoneNumber(),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
 
           DefaultTextStyle.merge(
-            style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
                 Text("E-Mail Mahasiswa"),
@@ -61,10 +62,10 @@ class _SignupForm extends State<SignupForm> {
             ),
           ),
           buildEmailMahasiswa(),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
 
           DefaultTextStyle.merge(
-            style: TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
                 Text("Kata Sandi"),
@@ -72,19 +73,24 @@ class _SignupForm extends State<SignupForm> {
             ),
           ),
           buildPassword(),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
 
           Container(
             width: 400,
             height: 45,
             child: TextButton(
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xff3167FF),
+                backgroundColor: const Color(0xff3167FF),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const InputdataScreen()),
+                );
+              },
               child: const Text(
                 "Daftar",
                 style: TextStyle(
@@ -93,6 +99,25 @@ class _SignupForm extends State<SignupForm> {
                 ),
               ),
             ),
+          ),
+
+          Row(
+            children: [
+              Checkbox(
+                  value: setuju,
+                  onChanged: (value){
+                    setState((){
+                      setuju = value;
+                  });
+              }),
+              const Expanded(
+                child: Text(
+                  "Saya setuju dengan semua syarat dan ketentuan yang berlaku.",
+                  softWrap: true,
+                  maxLines: 2,
+                )
+              )
+            ],
           ),
 
           const SizedBox(
@@ -110,7 +135,7 @@ class _SignupForm extends State<SignupForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Nama Pengguna',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32)
         ),
@@ -130,7 +155,7 @@ class _SignupForm extends State<SignupForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Nomor Telepon',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32)
         ),
@@ -149,7 +174,7 @@ class _SignupForm extends State<SignupForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Email Mahasiswa',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32)
         ),
@@ -168,7 +193,7 @@ class _SignupForm extends State<SignupForm> {
       style: mTitleStyle,
       decoration: InputDecoration(
         hintText: 'Masukkan Kata Sandi',
-        contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+        contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32)
         ),
