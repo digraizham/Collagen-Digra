@@ -1,21 +1,20 @@
 // ignore_for_file: file_names
 
-import 'package:project_collagen/Screens/Recovery_Code/RecoverScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForgotPassForm extends StatefulWidget {
-  const ForgotPassForm({super.key});
+class RecoverForm extends StatefulWidget {
+  const RecoverForm({super.key});
 
   @override
-  _ForgotPassForm createState() => _ForgotPassForm();
+  _RecoverForm createState() => _RecoverForm();
 }
 
-class _ForgotPassForm extends State<ForgotPassForm> {
-  String? email;
+class _RecoverForm extends State<RecoverForm> {
+  String? kode;
 
-  TextEditingController txtEmail = TextEditingController();
+  TextEditingController txtKode = TextEditingController();
 
   FocusNode focusNode = FocusNode();
 
@@ -29,7 +28,7 @@ class _ForgotPassForm extends State<ForgotPassForm> {
                 color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
             child: Row(
               children: const [
-                Text("E-Mail"),
+                Text("Kode Pemulihan"),
               ],
             ),
           ),
@@ -45,11 +44,9 @@ class _ForgotPassForm extends State<ForgotPassForm> {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              onPressed: () {
-                Navigator.pushNamed(context, RecoverScreen.routeName);
-              },
+              onPressed: () {},
               child: const Text(
-                "Verifikasi",
+                "Kirim",
                 style: TextStyle(
                   color: Color(0xffffffff),
                   fontSize: 20,
@@ -85,11 +82,11 @@ class _ForgotPassForm extends State<ForgotPassForm> {
 
   TextFormField buildUserName() {
     return TextFormField(
-      controller: txtEmail,
+      controller: txtKode,
       keyboardType: TextInputType.text,
       style: mTitleStyle,
       decoration: InputDecoration(
-        hintText: 'Masukkan email',
+        hintText: 'Masukkan kode',
         contentPadding: EdgeInsets.fromLTRB(20, 10, 20, 10),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32)),
         labelStyle:

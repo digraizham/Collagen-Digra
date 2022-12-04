@@ -1,15 +1,15 @@
-import 'package:project_collagen/Components/Forgot_Password/ForgotPassForm.dart';
+import 'package:project_collagen/Components/Recovery_Code/RecoverForm.dart';
 import 'package:project_collagen/size_config.dart';
 import 'package:flutter/cupertino.dart';
 
-class FrogotPassComponent extends StatefulWidget {
-  const FrogotPassComponent({super.key});
+class RecoverComponent extends StatefulWidget {
+  const RecoverComponent({super.key});
 
   @override
-  _ForgotPassComponent createState() => _ForgotPassComponent();
+  _RecoverComponent createState() => _RecoverComponent();
 }
 
-class _ForgotPassComponent extends State<FrogotPassComponent> {
+class _RecoverComponent extends State<RecoverComponent> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,21 +30,20 @@ class _ForgotPassComponent extends State<FrogotPassComponent> {
                   children: const [
                     Expanded(
                       child: Text(
-                        "Masukkan email yang terdaftar ketika anda melakukan registrasi akun.",
+                        "Kami telah mengirim kode  pemulihan ke sawadikap@gmail.com. Silahkan cek di kotak masuk pada E-mail tersebut.",
                         style: TextStyle(
                           color: CupertinoColors.black,
                           fontSize: 15
                         ),
                         softWrap: true,
-                        maxLines: 2,
+                        maxLines: 3,
                       ),
                     ),
                   ],
                 ),
 
                 const SizedBox(height: 20),
-
-                ForgotPassForm()
+                RecoverForm()
               ],
             ),
           ),

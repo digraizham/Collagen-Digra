@@ -1,3 +1,4 @@
+import 'package:project_collagen/Screens/Recovery_Code/RecoverScreen.dart';
 import 'package:project_collagen/Screens/Forgot_Password/ForgotPassScreen.dart';
 import 'package:project_collagen/Screens/Login/LoginScreen.dart';
 import 'package:project_collagen/Screens/Register/SignupScreen.dart';
@@ -8,5 +9,6 @@ final Map<String, WidgetBuilder> routes = {
   LoginScreen.routeName: (context) => LoginScreen(),
   SignupScreen.routeName: (context) => SignupScreen(),
   InputdataScreen.routeName: (context) => InputdataScreen(),
-  ForgotPassScreen.routeName: (context) => ForgotPassScreen()
+  ForgotPassScreen.routeName: (context) => ForgotPassScreen(),
+  RecoverScreen.routeName: (context) => RecoverScreen(),
 };
