@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
+import 'package:project_collagen/Screens/Login/LoginScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_rounded_date_picker/flutter_rounded_date_picker.dart';
@@ -64,7 +65,9 @@ class _InputDataForm extends State<InputDataForm> {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, LoginScreen.routeName);
+              },
               child: const Text(
                 "Simpan",
                 style: TextStyle(

@@ -1,3 +1,4 @@
+import 'package:project_collagen/Screens/PrimaryScreen.dart';
 import 'package:project_collagen/Screens/Forgot_Password/ForgotPassScreen.dart';
 import 'package:project_collagen/Screens/Register/SignupScreen.dart';
 import 'package:project_collagen/utils/constants.dart';
@@ -59,7 +60,9 @@ class _SignInForm extends State<SignInForm> {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, PrimaryScreen.routeName);
+              },
               child: const Text(
                 "Login",
                 style: TextStyle(
