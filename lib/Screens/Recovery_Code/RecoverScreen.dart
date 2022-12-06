@@ -16,6 +16,11 @@ class RecoverScreen extends StatelessWidget {
         title: Text(
             "Kode  Pemulihan",
         ),
+        titleTextStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 23,
+        ),
         // ignore: prefer_const_constructors
         leading: IconButton(
           icon: const Icon(

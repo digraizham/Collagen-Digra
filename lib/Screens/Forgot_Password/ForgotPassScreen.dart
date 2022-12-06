@@ -16,6 +16,11 @@ class ForgotPassScreen extends StatelessWidget {
         title: Text(
           "Lupa Kata Sandi",
         ),
+        titleTextStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+          fontSize: 23,
+        ),
         // ignore: prefer_const_constructors
         leading: IconButton(
           icon: const Icon(
