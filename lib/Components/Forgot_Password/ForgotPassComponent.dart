@@ -30,7 +30,9 @@ class _ForgotPassComponent extends State<ForgotPassComponent> {
                       child: Text(
                         "Masukkan email yang terdaftar ketika anda melakukan registrasi akun.",
                         style: TextStyle(
-                            color: CupertinoColors.black, fontSize: 15),
+                            color: CupertinoColors.black,
+                            fontSize: 15
+                        ),
                         softWrap: true,
                         maxLines: 2,
                       ),
