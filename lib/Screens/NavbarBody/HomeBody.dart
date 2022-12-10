@@ -1,74 +1,111 @@
-import 'package:project_collagen/size_config.dart';
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-class InputDataComponent extends StatefulWidget {
-  const InputDataComponent({super.key});
+import 'package:flutter/material.dart';
+
+class HomeBody extends StatefulWidget {
+  const HomeBody({super.key});
 
   @override
-  _InputDataComponent createState() => _InputDataComponent();
+  _HomeBody createState() => _HomeBody();
 }
 
-class _InputDataComponent extends State<InputDataComponent> {
+class _HomeBody extends State<HomeBody> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenHeight(20)),
-          child: SingleChildScrollView(
-            child: Column(
+    return Scaffold(
+      body: Column(
+        children: <Widget>[
+          Post1(),
+          Post1(),
+        ],
+      ),
+    );
+  }
+}
+
+class Post1 extends StatelessWidget {
+  const Post1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          ListTile(
+            leading: Image.asset("assets/images/Picture1.png"),
+            title: Text('Shafwan Maulana'),
+            subtitle: Text('10 menit yang lalu'),
+          ),
+          Row(
+            children: const [
+              Expanded(
+                  child: Text(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 13,
+                    ),
+                    softWrap: true,
+                    maxLines: 10,
+                  )
+              )
+            ],
+          ),
+          Divider(
+            color: Colors.grey,
+            thickness: 2,
+            indent: 8,
+            endIndent: 8,
+          ),
+          Container(
+            child: Row(
               children: [
-                DefaultTextStyle.merge(
-                  style: const TextStyle(
-                    color: CupertinoColors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20
-                  ),
-                  child: Row(
-                    children: const [
-                      Text("Selamat Datang,"),
-                    ],
-                  ),
-                ),
-                DefaultTextStyle.merge(
-                  style: const TextStyle(
-                    color: CupertinoColors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20
-                  ),
-                  child: Row(
-                    children: const [
-                      Text("Username")
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  children: const [
-                    Expanded(
-                      child: Text(
-                        "Lengkapi biodata di bawah untuk menyelesaikan proses registrasi.",
-                        style: TextStyle(
-                          color: CupertinoColors.black,
-                          fontSize: 13
-                        ),
-                        softWrap: true,
-                        maxLines: 2,
-                      ),
+                Column(
+                  children: <Widget>[
+                    TextButton(
+                      child: Icon(Icons.thumb_up_alt_outlined),
+                      onPressed: () {/* ... */},
                     ),
                   ],
                 ),
-
-                const SizedBox(height: 20),
-                
+                const SizedBox(
+                  width: 35,
+                ),
+                Column(
+                  children: <Widget>[
+                    TextButton(
+                      child: Icon(Icons.thumb_down_alt_outlined),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 35,
+                ),
+                Column(
+                  children: <Widget>[
+                    TextButton(
+                      child: Icon(Icons.comment_outlined),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  width: 35,
+                ),
+                Column(
+                  children: <Widget>[
+                    TextButton(
+                      child: Icon(Icons.share),
+                      onPressed: () {/* ... */},
+                    ),
+                  ],
+                ),
               ],
             ),
-          ),
-        ),
+          )
+        ],
       ),
     );
   }

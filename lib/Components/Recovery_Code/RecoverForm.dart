@@ -61,22 +61,11 @@ class _RecoverForm extends State<RecoverForm> {
           const SizedBox(
             height: 240,
           ),
-          Stack(
-            children: [
-
-              Image.asset(
-                "assets/images/vektor_signin.png",
-                alignment: Alignment.bottomLeft,
-                cacheHeight: 190,
-                cacheWidth: 350,
-              ),
-              Image.asset(
-                  "assets/images/vector_inputdata.png",
-                  alignment: Alignment.bottomLeft,
-                  cacheHeight: 190,
-                  cacheWidth: 350,
-              )
-            ],
+          Image.asset(
+            "assets/images/Vector_newpass.png",
+            alignment: Alignment.bottomLeft,
+            cacheHeight: 190,
+            cacheWidth: 350,
           )
         ],
       ),

@@ -31,6 +31,8 @@ class ForgotPassScreen extends StatelessWidget {
         ),
       ),
       body: ForgotPassComponent(),
+
+
     );
   }
 }

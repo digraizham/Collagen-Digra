@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_collagen/Screens/NavbarBody/HomeBody.dart';
+import 'package:project_collagen/Screens/NavbarBody/FriendBody.dart';
+import 'package:project_collagen/Screens/NavbarBody/MoreBody.dart';
+import 'package:project_collagen/Screens/NavbarBody/ShopBody.dart';
 
 class PrimaryScreen extends StatefulWidget {
   static String routeName = "/primary";
@@ -11,11 +15,11 @@ class PrimaryScreen extends StatefulWidget {
 class _PrimaryScreenState extends State<PrimaryScreen> {
   int index = 0;
   final pages = [
-    const Center(child: Text('Page 1', style: TextStyle(fontSize: 20),),),
-    const Center(child: Text('Page 2', style: TextStyle(fontSize: 20),),),
+    HomeBody(),
+    FriendBody(),
     const Center(child: Text('Page 3', style: TextStyle(fontSize: 20),),),
-    const Center(child: Text('Page 4', style: TextStyle(fontSize: 20),),),
-    const Center(child: Text('Page 5', style: TextStyle(fontSize: 20),),),
+    ShopBody(),
+    MoreBody(),
   ];
 
   @override
@@ -37,14 +41,16 @@ class _PrimaryScreenState extends State<PrimaryScreen> {
               backgroundColor: Colors.white,
               title: const Text(
                   "Hello, User"
-
               ),
               titleTextStyle: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   fontSize: 20
               ),
-              leading: Image.asset("assets/images/Picture1.png"),
+
+              leading: Image.asset(
+                  "assets/images/Picture1.png"
+              ),
               actions: <Widget>[
                 IconButton(icon: const Icon(Icons.notifications_outlined, color: Colors.blue,), onPressed: () {}),
                 IconButton(icon: const Icon(Icons.search, color: Colors.blue,), onPressed: () {}),
