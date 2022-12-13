@@ -13,7 +13,7 @@ class ForgotPassScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Lupa Kata Sandi",
         ),
         titleTextStyle: const TextStyle(

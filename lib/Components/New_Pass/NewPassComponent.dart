@@ -13,41 +13,48 @@ class _NewPassComponent extends State<NewPassComponent> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenHeight(20)),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                
-                const SizedBox(
-                  height: 40,
-                ),
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenHeight(20)),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
 
-                Row(
-                  children: const [
-                    Expanded(
-                      child: Text(
-                        "Buat kata sandi baru dengan minimal 6 karakter. Anda memerlukan kata sandi ini untuk login ke akun Anda.",
-                        style: TextStyle(
-                          color: CupertinoColors.black,
-                          fontSize: 15
+                  Row(
+                    children: const [
+                      Expanded(
+                        child: Text(
+                          "Buat kata sandi baru dengan minimal 6 karakter. Anda memerlukan kata sandi ini untuk login ke akun Anda.",
+                          style: TextStyle(
+                              color: CupertinoColors.black,
+                              fontSize: 15
+                          ),
+                          softWrap: true,
+                          maxLines: 3,
                         ),
-                        softWrap: true,
-                        maxLines: 3,
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
 
-                const SizedBox(height: 20),
-                NewPassForm()
-              ],
+                  const SizedBox(height: 10),
+                  NewPassForm()
+                ],
+              ),
             ),
           ),
-        ),
+          Image.asset(
+            "assets/images/Vector_newpass.png",
+            alignment: Alignment.bottomCenter,
+            fit: BoxFit.cover,
+            height: 238,
+            width: 450,
+          )
+        ],
       ),
     );
   }

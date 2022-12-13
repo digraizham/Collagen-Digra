@@ -92,32 +92,6 @@ class _SignInForm extends State<SignInForm> {
               )
             ],
           ),
-          const SizedBox(
-            height: 30,
-          ),
-          Stack(
-            children: [
-              Image.asset(
-                "assets/images/vektor_signin.png",
-                alignment: Alignment.bottomLeft,
-                cacheHeight: 190,
-                cacheWidth: 350,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, SignupScreen.routeName);
-                },
-                child: const Text(
-                  "Belum memiliki akun? Daftar",
-                  style: TextStyle(
-                    height: 15,
-                    color: Colors.white,
-                    fontSize: 14,
-                  ),
-                ),
-              ),
-            ],
-          )
         ],
       ),
     );

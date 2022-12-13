@@ -13,19 +13,19 @@ class _InputDataComponent extends State<InputDataComponent> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenHeight(20)),
-          child: SingleChildScrollView(
+      child: Column(
+        children: [
+          Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenHeight(20)
+              ),
             child: Column(
               children: [
                 DefaultTextStyle.merge(
                   style: const TextStyle(
-                    color: CupertinoColors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20
+                      color: CupertinoColors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
                   ),
                   child: Row(
                     children: const [
@@ -35,9 +35,9 @@ class _InputDataComponent extends State<InputDataComponent> {
                 ),
                 DefaultTextStyle.merge(
                   style: const TextStyle(
-                    color: CupertinoColors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20
+                      color: CupertinoColors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
                   ),
                   child: Row(
                     children: const [
@@ -54,8 +54,8 @@ class _InputDataComponent extends State<InputDataComponent> {
                       child: Text(
                         "Lengkapi biodata di bawah untuk menyelesaikan proses registrasi.",
                         style: TextStyle(
-                          color: CupertinoColors.black,
-                          fontSize: 13
+                            color: CupertinoColors.black,
+                            fontSize: 13
                         ),
                         softWrap: true,
                         maxLines: 2,
@@ -69,7 +69,14 @@ class _InputDataComponent extends State<InputDataComponent> {
               ],
             ),
           ),
-        ),
+          Image.asset(
+            "assets/images/vector_inputdata.png",
+            alignment: Alignment.bottomCenter,
+            fit: BoxFit.fill,
+            height: 160,
+            width: 550,
+          ),
+        ],
       ),
     );
   }

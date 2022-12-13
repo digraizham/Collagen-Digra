@@ -13,7 +13,7 @@ class RecoverScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
             "Kode  Pemulihan",
         ),
         titleTextStyle: const TextStyle(
@@ -30,7 +30,7 @@ class RecoverScreen extends StatelessWidget {
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
-      body: RecoverComponent(),
+      body: const RecoverComponent(),
     );
   }
 }
