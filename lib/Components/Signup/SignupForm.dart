@@ -112,7 +112,7 @@ class _SignupForm extends State<SignupForm> {
               }),
               const Expanded(
                 child: Text(
-                  "Saya setuju dengan semua syarat dan ketentuan yang berlaku.",
+                  "Saya setuju dengan semua" " syarat dan ketentuan" " yang berlaku.",
                   softWrap: true,
                   maxLines: 2,
                 )

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:project_collagen/Screens/Login/LoginScreen.dart';
+import 'package:project_collagen/Screens/OnBoard/OnboardScreen.dart';
 
 class SplashScreenPage extends StatefulWidget {
   const SplashScreenPage({ Key? key }) : super(key: key);
@@ -22,7 +22,7 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
       //pindah ke halaman home
       Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (_) {
-            return LoginScreen();
+            return MyApp();
           })
       );
     });

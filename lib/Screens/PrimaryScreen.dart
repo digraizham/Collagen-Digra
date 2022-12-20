@@ -14,12 +14,12 @@ class PrimaryScreen extends StatefulWidget {
 
 class _PrimaryScreenState extends State<PrimaryScreen> {
   int index = 0;
-  final pages = [
-    HomeBody(),
-    FriendBody(),
-    const Center(child: Text('Page 3', style: TextStyle(fontSize: 20),),),
-    ShopBody(),
-    MoreBody(),
+  final body = [
+    const HomeBody(),
+    const FriendBody(),
+    null,
+    const ShopBody(),
+    const MoreBody(),
   ];
 
   @override
@@ -27,41 +27,7 @@ class _PrimaryScreenState extends State<PrimaryScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.square(60),
-          child: Container(
-            decoration: const BoxDecoration(boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(0, 2.0),
-                blurRadius: 4.0,
-              )
-            ]),
-            child: AppBar(
-              backgroundColor: Colors.white,
-              title: const Text(
-                  "Hello, User"
-              ),
-              titleTextStyle: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20
-              ),
-
-              leading: Image.asset(
-                  "assets/images/Picture1.png"
-              ),
-              actions: <Widget>[
-                IconButton(icon: const Icon(Icons.notifications_outlined, color: Colors.blue,), onPressed: () {}),
-                IconButton(icon: const Icon(Icons.search, color: Colors.blue,), onPressed: () {}),
-                IconButton(icon: const Icon(Icons.mail_outline, color: Colors.blue,), onPressed: () {}),
-              ],
-            ),
-          ),
-        ),
-
-        body: pages[index],
-
+        body: body[index],
         bottomNavigationBar: NavigationBar(
           height: 60,
           selectedIndex: index,
