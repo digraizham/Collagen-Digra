@@ -12,6 +12,7 @@ import 'package:project_collagen/Screens/AppbarBody/Inbox.dart';
 import 'package:project_collagen/Screens/AppbarBody/Search.dart';
 import 'package:project_collagen/Screens/Post/Comment.dart';
 import 'package:flutter/material.dart';
+import 'package:project_collagen/Screens/add_post/AddPostScreen.dart';
 
 final Map<String, WidgetBuilder> routes = {
   LoginScreen.routeName: (context) => const LoginScreen(),
@@ -25,4 +26,5 @@ final Map<String, WidgetBuilder> routes = {
   SearchBody.routeName: (context) => const SearchBody(),
   PesanBody.routeName: (context) => const PesanBody(),
   CommentBody.routeName: (context) => CommentBody(),
+  AddPostScreen.routeName: (context) => const AddPostScreen(),
 };

@@ -4,6 +4,8 @@ import 'package:project_collagen/Screens/NavbarBody/FriendBody.dart';
 import 'package:project_collagen/Screens/NavbarBody/MoreBody.dart';
 import 'package:project_collagen/Screens/NavbarBody/ShopBody.dart';
 
+import 'add_post/AddPostScreen.dart';
+
 class PrimaryScreen extends StatefulWidget {
   static String routeName = "/primary";
 
@@ -66,7 +68,12 @@ class _PrimaryScreenState extends State<PrimaryScreen> {
           height: 70,
           child: FittedBox(
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AddPostScreen()),
+                );
+              },
               backgroundColor: Colors.blue,
               foregroundColor: Colors.white,
               elevation: 0,
